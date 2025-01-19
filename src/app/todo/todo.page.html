@@ -1,0 +1,39 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des Tâches</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/form">Ajouter une tâche</ion-button>
+      <ion-button *ngIf="!isAndroid" (click)="exportToPDF()">Exporter en PDF</ion-button>
+      <ion-button *ngIf="!isAndroid" (click)="exportToCSV()">Exporter en CSV</ion-button>
+      <ion-button *ngIf="isAndroid" (click)="testPushNotification()">Test Push Notification</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let task of todoList; let i = index">
+      <ion-label>
+        <h2>titre : {{ task.title }}</h2>
+        <p>Description : {{ task.description }}</p>
+        <small>Deadline de votre tâche : {{ task.taskDeadline }}</small>
+        <div>
+          <img *ngIf="task.photo" [src]="task.photo" alt="Task Photo" style="max-height: 100px; margin-top: 10px;" />
+        </div>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" color="primary" (click)="editTask(task.id)">
+          <ion-icon name="create"></ion-icon> Edit
+        </ion-button>
+        <ion-button fill="clear" color="danger" (click)="deleteTask(task.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
