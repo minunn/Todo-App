@@ -1,5 +1,14 @@
 # Todo Application avec Ionic et Angular
 
+## Screenshots
+
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+  <img src="image.png" alt="Home" width="300" />
+  <img src="image-1.png" alt="Ajout de tâche" width="300" />
+  <img src="image-2.png" alt="Tâches" width="300" />
+  <img src="image-3.png" alt="Notification" width="300" />
+</div>
+
 ## Description
 
 Cette application **Todo** est développée avec **Ionic**, **Angular** et des fonctionnalités natives telles que l'accès à la caméra et l'exportation des tâches en **PDF** et **CSV**. Elle est compatible avec les plateformes **Android** et **Web**.
